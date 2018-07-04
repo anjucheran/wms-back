@@ -54,8 +54,5 @@ module.exports = (sequelize, DataTypes) => {
   User.prototype.hashPassword = (password) => {
     return bcrypt.hashSync(password);
   }
-  User.prototype.comparePassword = (password) => {
-    return bcrypt.compareSync(password, user.password);
-  }
   return User;
 };

@@ -14,8 +14,8 @@ export async function signUp(req, res) {
   }
 }
 
-export async function login(req, res, next) {
-  res.status(HTTPStatus.OK).json(await req.user);
+export function login(req, res, next) {
+  res.status(HTTPStatus.OK).json(req.user);
   // res.send(req.user);
   return next();
 }
