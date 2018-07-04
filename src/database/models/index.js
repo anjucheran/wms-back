@@ -15,12 +15,13 @@ if (config.use_env_variable) {
 }
 
 fs
-  .readdirSync(path.resolve(__dirname, 'Users', 'Anju Cheran', 'Desktop', 'web-monitoring-system-back', 'src', 'database', 'models'))
+  .readdirSync('/home/anjuc/Desktop/wms-back/src/database/models')
   .filter(file => {
+    console.log('file', file);
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(file => {
-    var model = sequelize['import'](path.join(path.resolve(__dirname, 'Users', 'Anju Cheran', 'Desktop', 'web-monitoring-system-back', 'src', 'database', 'models'), file));
+    var model = sequelize['import'](path.join('/home/anjuc/Desktop/wms-back/src/database/models', file));
     db[model.name] = model;
   });
 
